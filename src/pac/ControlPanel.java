@@ -80,6 +80,11 @@ public class ControlPanel extends JPanel {
 
         mandelbrot.addActionListener( e-> {
             p.mandelbrot = !p.mandelbrot ;
+
+            if (p.burningShip) {
+                p.burningShip = false;
+                burningShip.setSelected(false);
+            }
             f.repaint();
         });
 
