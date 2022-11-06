@@ -3,7 +3,7 @@ programme fait rapidement pour générer des fractale
 
 zoomer avec le scroll
 
-diriger avec en maintenant cliquer
+diriger en maintenant cliquer
 
 ![image de fractal simple](https://github.com/Jules-Latapy/Fractal/blob/main/img/base.png?raw=true)
 
