@@ -8,30 +8,27 @@ public class ControlPanel extends JPanel {
 
     public ControlPanel(Param p, JFrame f) {
 
-        JPanel          p1 = new JPanel(new GridLayout(3, 0));
+        this.setSize(p.tailleFrame/3,p.tailleFrame);
+
         JPanel          p2 = new JPanel(new GridLayout(6, 0));
         JPanel          p3 = new JPanel(new GridLayout(6, 0));
         JPanel          p4 = new JPanel();
 
-        JLabel          indicZoom  = new JLabel("" + p.zoom );
-        JLabel          indicIm    = new JLabel("" +p.coefIm);
-        JLabel          indicRe    = new JLabel("" +p.coefRe);
-        JLabel          indicLimit = new JLabel("" +p.limit );
-        JLabel          indicIter  = new JLabel(""+p.iteration);
+        JLabel          indicIm    = new JLabel("" + p.coefIm  );
+        JLabel          indicRe    = new JLabel("" + p.coefRe  );
+        JLabel          indicLimit = new JLabel("" + p.limit   );
+        JLabel          indicIter  = new JLabel("" + p.iteration);
 
         Scrollbar       coefIm = new Scrollbar(Scrollbar.HORIZONTAL, (int) p.coefIm, 10, -100, 300);
-        Scrollbar       coefRe = new Scrollbar(Scrollbar.HORIZONTAL, (int)p.coefRe, 10, -100, 300);
-        Scrollbar       limit  = new Scrollbar(Scrollbar.HORIZONTAL, p.limit, 10, 0, 1_000_000);
-        Scrollbar       iter   = new Scrollbar(Scrollbar.HORIZONTAL, p.iteration, 10, 0, 1_000);
+        Scrollbar       coefRe = new Scrollbar(Scrollbar.HORIZONTAL, (int)p.coefRe , 10, -100, 300);
+        Scrollbar       limit  = new Scrollbar(Scrollbar.HORIZONTAL, p.limit       , 10,    0, 1_000_000);
+        Scrollbar       iter   = new Scrollbar(Scrollbar.HORIZONTAL, p.iteration   , 10,    0, 1_000);
 
         JRadioButton    choix      = new JRadioButton("simple") ;
         JRadioButton    mandelbrot = new JRadioButton("mandelbrot") ;
         JRadioButton    burningShip= new JRadioButton("burning ship") ;
 
-        this.setLayout(new GridLayout(4,1,10,10));
-
-        p1.add(new JLabel("zoom :"));
-        p1.add(indicZoom) ;
+        this.setLayout(new GridLayout(3,1,10,10));
 
         p2.add(new JLabel("coef reel :"));
         p2.add(indicRe) ;
@@ -97,7 +94,6 @@ public class ControlPanel extends JPanel {
             f.repaint();
         });
 
-        this.add(p1);
         this.add(p2);
         this.add(p3);
         this.add(p3);
